@@ -53,6 +53,10 @@ h3{
     position: relative;
 }
 
+#pause{
+    display: none;
+}
+
 .mic{
     width: 40%;
     margin-bottom: 10px;
