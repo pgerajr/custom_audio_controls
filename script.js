@@ -1,17 +1,29 @@
 let music = document.getElementById("song");
 let clock = document.getElementById("timer");
 let count_display = document.getElementById("counter");
+let go = document.getElementById("play");
+let wait = document.getElementById("pause");
+
 
 function play() {
     music.play();
-    count_display.style.display = "block"
+    count_display.style.display = "block";
+    go.style.display = "none";
+    wait.style.display = "inline-block";
+}
+
+function pause() {
+    music.pause();
+    go.style.display = "inline-block";
+    wait.style.display = "none";
 }
 
 function stop() {
     music.pause();
     music.currentTime = 0;
     count_display.style.display = "none";
-
+    go.style.display = "inline-block";
+    wait.style.display = "none";
 }
 
 function backward() {
