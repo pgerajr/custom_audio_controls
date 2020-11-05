@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Advanced - Audio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <audio id="song">
+        <source src="./_assets/file_example_MP3_1MG.mp3" type="audio/mpeg">
+        <source src="./_assets/file_example_OOG_1MG.ogg" type="audio/ogg">
+        This audio file is not supported by your current browser. Please, dowload the latest version of Google Chrome,
+        FirexFox, Internet Explorer, Safari or Opera. Thanks!
+    </audio>
+
+    <div class="container">
+
+        <div id="counter">
+            <h1 id="timer"></h1>
+            <h3>segundos</h3>
+        </div>
+        <img class="mic" src="./_assets/retro-mic.png" alt="">
+
+        <div class="controls">
+            <img class="btn" onclick="backward()" src="../_assets/15_sec_backward.png">
+            <img class="btn" onclick="slowDown()" src="../_assets/fast_backward.png">
+            <img class="btn" onclick="play()" src="../_assets/play.png">
+            <img class="btn" onclick="stop()" src="../_assets/stop.png">
+            <img class="btn" onclick="speedUp()" src="../_assets/fast_forward.png">
+            <img class="btn" onclick="forward()" src="../_assets/15_sec_forward.png">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
