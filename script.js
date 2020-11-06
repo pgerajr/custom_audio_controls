@@ -4,7 +4,6 @@ let count_display = document.getElementById("counter");
 let go = document.getElementById("play");
 let wait = document.getElementById("pause");
 
-
 function play() {
     music.play();
     count_display.style.display = "block";
@@ -14,14 +13,18 @@ function play() {
 
 function pause() {
     music.pause();
-    go.style.display = "inline-block";
-    wait.style.display = "none";
+    togglePlayPause();
 }
 
 function stop() {
     music.pause();
     music.currentTime = 0;
     count_display.style.display = "none";
+    togglePlayPause();
+
+}
+
+function togglePlayPause() {
     go.style.display = "inline-block";
     wait.style.display = "none";
 }
@@ -32,6 +35,7 @@ function backward() {
 
 function forward() {
     music.currentTime += 15;
+    count_display.style.display = "block";
 }
 
 function slowDown() {
@@ -44,6 +48,10 @@ function speedUp() {
 
 music.ontimeupdate = function () {
     timer();
+
+    if (music.ended == true) {
+        stop();
+    }
 }
 
 function timer() {
